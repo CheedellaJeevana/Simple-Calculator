@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.calculator {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem 3rem;
+  border-radius: 2rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+.calculator:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+}
+
+.header-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #764ba2;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.75rem;
+  box-shadow: 0 4px 8px rgba(118,75,162,.6);
+  user-select: none;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background 0.3s ease;
+}
+.header-icon:hover {
+  background: #5461ff;
+  box-shadow: 0 6px 12px rgba(84,97,255,.8);
+  cursor: default;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 600;
+  color: #342e60;
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 4px rgba(102,126,234,0.6);
+  letter-spacing: 1.5px;
+  user-select: none;
+}
+
+label.form-label {
+  font-weight: 600;
+  color: #555075;
+  font-size: 1.1rem;
+  user-select: none;
+}
+
+input[type=number], select.form-select {
+  border-radius: 1rem;
+  padding: 0.65rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 2px solid #ddd;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(102,126,234,.12);
+}
+input[type=number]:focus, select.form-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 8px #667eeaaa;
+}
+
+.result-display {
+  background: #6a54f0;
+  border-radius: 1rem;
+  padding: 1.25rem 1rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  text-align: center;
+  user-select: none;
+  margin-top: 2rem;
+  color: #f0e9ff;
+  text-shadow: 0 0 10px #a99affb0;
+  box-shadow: 0 6px 20px rgba(106, 84, 240, 0.6);
+  letter-spacing: 1px;
+  transition: background-color 0.4s ease;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: #d1c9ff;
+  text-align: center;
+  margin-top: 1.75rem;
+  user-select: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 6px #a99aff80;
+}
+
+/* Subtle animated decorative circles behind the card */
+.decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  filter: blur(50px);
+  z-index: 1;
+  animation: floatUpDown 6s ease-in-out infinite alternate;
+}
+.circle1 {
+  width: 160px;
+  height: 160px;
+  background: #9c92ff;
+  top: -60px;
+  left: -60px;
+  animation-delay: 0s;
+}
+.circle2 {
+  width: 120px;
+  height: 120px;
+  background: #a1a0ff;
+  bottom: -50px;
+  right: -50px;
+  animation-delay: 3s;
+}
+
+@keyframes floatUpDown {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(20px); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .calculator {
+    padding: 2rem 1.5rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  input[type=number], select.form-select {
+    font-size: 1rem;
+  }
+  .result-display {
+    font-size: 1.5rem;
+    padding: 1rem 0.75rem;
+  }
+}
